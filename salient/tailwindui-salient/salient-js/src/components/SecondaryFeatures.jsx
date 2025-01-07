@@ -216,13 +216,15 @@ export function SecondaryFeatures() {
       className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Simplify everyday business tasks.
+        <div className="mx-auto max-w-3xl md:text-center">
+          <h2 className="font-display text-4xl tracking-tight text-slate-900 sm:text-4xl">
+            Обойдите конкурентов, предоставив
+            клиентам самый быстрый и удобный метод
+            онлайн оплаты в два клика!
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Because you’d probably be a little confused if we suggested you
-            complicate your everyday business tasks instead.
+            Сократите операционные процессы выставления счетов, контроля платежей и отправки
+            фискальных чеков минимум в 2 раза!
           </p>
         </div>
         <FeaturesMobile />
