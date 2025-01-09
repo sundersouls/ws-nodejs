@@ -9,9 +9,10 @@ import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { Testimonials } from '@/components/Testimonials'
 
 export default function Home() {
+
   return (
     <>
-      <Header />
+      <Header  /> 
       <main>
         <Hero />
         <PrimaryFeatures />
@@ -22,5 +23,5 @@ export default function Home() {
       </main>
       <Footer />
     </>
-  )
+  );
 }

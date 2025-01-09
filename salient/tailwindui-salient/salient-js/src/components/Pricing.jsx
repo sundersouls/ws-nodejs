@@ -106,7 +106,7 @@ export function Pricing() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
               <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-blue-400" />
-              <span className="relative">Простое  ценообразование,</span>
+              <span className="relative text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">Простое  ценообразование,</span>
             </span>{' '}
             для всех.
           </h2>

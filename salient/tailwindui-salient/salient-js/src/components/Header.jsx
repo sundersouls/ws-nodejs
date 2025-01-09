@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
@@ -9,6 +9,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
+import WhatsAppVerificationForm from './WhatsAppVerificationForm'
 
 function MobileNavLink({ href, children }) {
   return (
@@ -56,7 +57,7 @@ function MobileNavigation() {
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
-          as={Fragment}
+          as="Fragment"
           enter="duration-150 ease-out"
           enterFrom="opacity-0"
           enterTo="opacity-100"
@@ -67,7 +68,7 @@ function MobileNavigation() {
           <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
         </Transition.Child>
         <Transition.Child
-          as={Fragment}
+          as="Fragment"
           enter="duration-150 ease-out"
           enterFrom="opacity-0 scale-95"
           enterTo="opacity-100 scale-100"
@@ -92,6 +93,10 @@ function MobileNavigation() {
 }
 
 export function Header() {
+  const [isFormVisible, setFormVisible] = useState(false)
+
+  const toggleForm = () => setFormVisible(!isFormVisible)
+
   return (
     <header className="py-10">
       <Container>
@@ -111,16 +116,27 @@ export function Header() {
               <NavLink href="/login">Sign in</NavLink>
             </div>
             <Button href="/register" color="blue">
-              <span>
+              <span className="text-center">
                 Get started <span className="hidden lg:inline">today</span>
               </span>
+            </Button>
+            <Button onClick={toggleForm} color="blue">
+              Verify WhatsApp
             </Button>
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>
+
           </div>
         </nav>
+
+        {isFormVisible && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <WhatsAppVerificationForm setIsModalOpen={setFormVisible}/>
+          </div>
+        )}
       </Container>
     </header>
   )
 }
+
