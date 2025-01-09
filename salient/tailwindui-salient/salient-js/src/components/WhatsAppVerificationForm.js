@@ -32,7 +32,7 @@ const WhatsAppVerificationForm = ({ setIsModalOpen }) => {
     const formattedPhoneNumber = phoneNumber.replace('+', '');
 
     try {
-      const response = await axios.post('http://localhost:3001/send-code', {
+      const response = await axios.post('http://89.221.224.109:3001/send-code', {
         number: formattedPhoneNumber,
         code: code,
       });
